@@ -1,5 +1,5 @@
 ## FRONTEND TEMPLATE
-There is a litle pre project frontend. Contains SASS, Bootstrap and Gulp.
+This is a litle pre project frontend. Contains SASS, Bootstrap and Gulp.
 
 ## How to use
 The directory where is the bootstrap and SASS -> public_html/src.
