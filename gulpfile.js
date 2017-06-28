@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 gulp.task('default', ['sass_btsp','sass', 'js_btsp', 'js', 'image', 'watch', 'serve']);
 
 gulp.task('sass_btsp', function () {
-    return gulp.src('public_html/src/vendors/bootstrap/sass/**/*.scss')
+    return gulp.src('public_html/src/vendors/_bootstrap.scss')
             .pipe(concat('bootstrap.min.css'))
             .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
             .pipe(gulp.dest('public_html/assets/vendors/bootstrap/css'));
@@ -24,7 +24,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('js_btsp', function () {
-    return gulp.src('public_html/src/vendors/bootstrap/js/**/*.js')
+    return gulp.src('public_html/src/vendors/_bootstrap.js')
             .pipe(concat('bootstrap.min.js'))
             .pipe(uglify())
             .pipe(gulp.dest('public_html/assets/vendors/bootstrap/js'));
@@ -48,9 +48,9 @@ gulp.task('image', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('public_html/src/vendors/bootstrap/sass/**/*.scss', ['sass_btsp']);
+    gulp.watch('public_html/src/vendors/**/*.scss', ['sass_btsp']);
     gulp.watch('public_html/src/sass/**/*.scss', ['sass']);
-    gulp.watch('public_html/src/vendors/bootstrap/js/**/*.js', ['js_btsp']);
+    gulp.watch('public_html/src/vendors/**/*.js', ['js_btsp']);
     gulp.watch('public_html/src/js/**/*.js', ['js']);
     gulp.watch('public_html/src/img/*', ['image']);
 });
